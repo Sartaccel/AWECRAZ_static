@@ -1,0 +1,183 @@
+
+
+/* Navbar Main */
+.container {
+  max-width: 1200px;   /* 👈 Control large screen width */
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+.navbar {
+  background: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  height: 80px;                 /* ✅ Fixed height */
+  display: flex;
+  align-items: center;          /* ✅ Vertical center */
+  animation: jumpIn 0.6s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Container */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Jump Animation */
+@keyframes jumpIn {
+  0% { transform: translateY(-60px); opacity: 0; }
+  60% { transform: translateY(10px); }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Logo Image */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  height: 55px;                 /* ✅ Reduced from 60 */
+  width: auto;
+  max-height: 60px;             /* ✅ Prevent overflow */
+  object-fit: contain;          /* ✅ Keep aspect ratio */
+  animation: logoZoomIn 0.8s ease;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+@keyframes logoZoomIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hover Animation */
+.logo-img:hover {
+  transform: scale(1.08);
+}
+
+/* Responsive Logo */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 40px;
+  }
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;                    /* ✅ Remove default ul margin */
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: rgb(94, 94, 94);
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Orange Glow */
+.nav-links li:hover a,
+.nav-links li.active a {
+  color: #ff6a00;
+  text-shadow: 0 0 10px rgba(255, 106, 0, 0.6);
+}
+
+
+
+/* Book Button */
+.book-btn {
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+
+  /* Gradient like the text */
+  background: linear-gradient(
+    90deg,
+    #ffc107 0%,     /* yellow */
+    #ff9800 50%,    /* orange */
+    #ff6a00 100%    /* deep orange */
+  );
+
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 14px rgba(255, 136, 25, 0.35);
+}
+
+/* Hover - Slight Bright Glow */
+.book-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 136, 25, 0.45);
+}
+
+/* Click */
+.book-btn:active {
+  transform: translateY(0);
+}
+
+
+
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+  .nav-links {
+    position: absolute;
+    top: 80px;                  /* ✅ Match navbar height */
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+
+  .nav-links.show {
+    display: flex;
+    animation: slideDown 0.4s ease;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .book-btn {
+    display: none;
+  }
+}
