@@ -1,0 +1,7 @@
+.hero-bg {
+  height: 100vh;
+  background: url("../../assets/images/your-hero-image.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
