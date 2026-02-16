@@ -2,8 +2,7 @@ import { useEffect } from "react";
 import "./App.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./Pages/Home/Home";
 import Service from "./Pages/Service/Service";
@@ -12,12 +11,12 @@ import About from "./Pages/About/About";
 import Branches from "./Pages/Branches/Branches";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
+import AdvantagesSketch from "./Pages/Advantages/AdvantagesSketch";
 function App() {
-
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: true
+      once: true,
     });
   }, []);
 
@@ -37,14 +36,15 @@ function App() {
       <section id="services">
         <Service />
       </section>
-
+      <section id="advantages">
+        <AdvantagesSketch />
+      </section>
       <section id="contact">
         <Contact />
       </section>
       <section id="Branches">
         <Branches />
       </section>
-
 
       <Footer />
     </>

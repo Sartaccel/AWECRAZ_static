@@ -24,14 +24,14 @@ export default function About() {
               Since 2018, we’ve been a trusted name in the film and advertising
               industry, bringing creativity and excellence to every project.
               As a Film and Advertisement Production company, we’ve proudly
-              completed over 175 advertisement productions and 4 full-length
+              completed over 175 + advertisement productions and 4 full-length
               movie productions.
             </p>
 
             <p>
               In 2022, we launched
               <span className="aboutL-brand"> AweCraz Brand Solution</span>,
-              helping businesses grow with strategy and impactful delivery.
+              a new venture aimed at helping aspiring business owners grow their brands on social media ,with a focus on stratergy,designand impactful delivery,<span className="aboutL-brand"> AweCraz Brand Solution</span>,empowers business to reach and engage their audience effectively
             </p>
 
             <div className="aboutL-tagline">
