@@ -1,0 +1,254 @@
+/* ===== SECTION ===== */
+
+.svc-section {
+  padding: 90px 20px;
+  background: #f5f6f8;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ===== TITLE ===== */
+
+.svc-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #111827;
+}
+
+.svc-title span {
+  color: #ff6a00;
+}
+
+/* ===== GRID ===== */
+
+.svc-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+/* ===== CARD ===== */
+
+.svc-card {
+  position: relative;
+  background: #ffffff;
+  padding: 32px 28px;
+  border-radius: 14px;
+  border: 1px solid #eef2f7;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+  overflow: hidden;
+  transform-style: preserve-3d;
+
+  opacity: 0;
+  transform: translateY(60px) scale(.94);
+  filter: blur(6px);
+
+  transition: transform .35s ease, box-shadow .35s ease, border-color .3s ease;
+}
+
+/* reveal trigger */
+
+.svc-card.show {
+  animation:
+    richReveal .8s cubic-bezier(.2,.7,.2,1) forwards,
+    floatIdle 7s ease-in-out infinite;
+
+  animation-delay:
+    var(--delay),
+    calc(var(--delay) + .8s);
+}
+
+
+/* ===== INNER ===== */
+
+.svc-card-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes richReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes floatIdle {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ===== LIGHT SWEEP ===== */
+
+.svc-light {
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255,255,255,.55),
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform .7s ease;
+  z-index: 1;
+}
+
+.svc-card:hover .svc-light {
+  transform: translateX(120%);
+}
+
+/* ===== HEADING ===== */
+
+.svc-head {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #111827;
+  position: relative;
+  padding-bottom: 10px;
+  transition: transform .25s ease;
+}
+
+.svc-head::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 42px;
+  height: 4px;
+  border-radius: 3px;
+  background: var(--accent);
+  transition: width .3s ease, box-shadow .3s ease;
+}
+
+.svc-card:hover .svc-head {
+  transform: translateZ(20px) scale(1.05);
+}
+
+.svc-card:hover .svc-head::after {
+  width: 80px;
+  box-shadow: 0 0 12px var(--accent);
+}
+
+/* ===== TEXT ===== */
+
+.svc-card p {
+  font-size: 14.5px;
+  color: #6b7280;
+  line-height: 1.6;
+  transition: opacity .3s ease;
+}
+
+.svc-card:hover p {
+  opacity: .95;
+}
+
+/* ===== HOVER EFFECT ===== */
+
+@media (hover:hover) {
+  .svc-card:hover {
+    transform: translateY(-14px) rotateX(4deg) rotateY(-4deg);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+    border-color: var(--accent);
+  }
+}
+
+@media (hover:none) {
+  .svc-card:active {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.16);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .svc-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .svc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-title {
+    font-size: 26px;
+  }
+
+  .svc-card {
+    padding: 26px 22px;
+  }
+}
+/* ===== MOBILE ACCENT ALWAYS VISIBLE ===== */
+
+@media (hover: none) {
+
+  .svc-card {
+    border-color: var(--accent);
+  }
+
+  .svc-head::after {
+    width: 80px;
+    box-shadow: 0 0 10px var(--accent);
+  }
+
+}
+@media (hover: none) {
+  .svc-card {
+    border-color: var(--accent);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+  }
+}
+/* ===== ROW WAVE OFFSET ===== */
+
+.svc-card:nth-child(3n+1) {
+  animation-name: richReveal, floatIdleA;
+}
+
+.svc-card:nth-child(3n+2) {
+  animation-name: richReveal, floatIdleB;
+}
+
+.svc-card:nth-child(3n+3) {
+  animation-name: richReveal, floatIdleC;
+}
+
+@keyframes floatIdleA {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes floatIdleB {
+  0%,100% { transform: translateY(-3px); }
+  50% { transform: translateY(3px); }
+}
+
+@keyframes floatIdleC {
+  0%,100% { transform: translateY(2px); }
+  50% { transform: translateY(-5px); }
+}
+@media (max-width: 600px) {
+
+  .svc-card:nth-child(odd) {
+    animation-name: richReveal, floatIdleA;
+  }
+
+  .svc-card:nth-child(even) {
+    animation-name: richReveal, floatIdleB;
+  }
+
+}
+@media (hover:hover) {
+  .svc-card:hover {
+    animation-duration: .6s, 4s;
+  }
+}

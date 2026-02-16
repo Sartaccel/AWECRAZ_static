@@ -1,9 +1,68 @@
-import React from 'react'
+import React from "react";
+import "./About.css";
+import PolyParticles from "./PolyParticles";
+import Success from "./Success";
 
-function About() {
+export default function About() {
   return (
-    <div>About</div>
-  )
+    <section className="aboutL">
+
+      {/* polygon animated background */}
+      <PolyParticles />
+
+      <div className="aboutL-wrap">
+
+        <h2 className="aboutL-title">
+          About <span>Us</span>
+        </h2>
+
+        <div className="aboutL-grid">
+
+          {/* LEFT CARD */}
+          <div className="aboutL-card">
+            <p>
+              Since 2018, we’ve been a trusted name in the film and advertising
+              industry, bringing creativity and excellence to every project.
+              As a Film and Advertisement Production company, we’ve proudly
+              completed over 175 advertisement productions and 4 full-length
+              movie productions.
+            </p>
+
+            <p>
+              In 2022, we launched
+              <span className="aboutL-brand"> AweCraz Brand Solution</span>,
+              helping businesses grow with strategy and impactful delivery.
+            </p>
+
+            <div className="aboutL-tagline">
+              We Plan. We Develop. We Design. We Deliver.
+            </div>
+          </div>
+
+          {/* RIGHT FEATURES */}
+          <div className="aboutL-features">
+            <Feature title="Comprehensive Solutions" text="End-to-end services tailored to your needs." />
+            <Feature title="Innovative Approach" text="Creative strategies powered by latest technology." />
+            <Feature title="Proven Expertise" text="A strong track record of successful projects." />
+          </div>
+
+        </div>
+      </div>
+        <Success/>
+    </section>
+    
+  );
 }
 
-export default About
+function Feature({ title, text }) {
+  return (
+    <div className="aboutL-feature">
+      <div className="arrow">»</div>
+      <div>
+        <h4>{title}</h4>
+        <p>{text}</p>
+      </div>
+    </div>
+  
+  );
+}
