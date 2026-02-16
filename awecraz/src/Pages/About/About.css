@@ -1,0 +1,241 @@
+/* ===== SECTION ===== */
+
+.aboutL {
+  background: #f3f4f6;
+  padding: 80px 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.aboutL-wrap {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.aboutL-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+}
+
+/* ===== TITLE ===== */
+
+.aboutL-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1f2937;
+}
+
+.aboutL-title span {
+  color: #ff6a00;
+}
+
+.aboutL-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: #ff6a00;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* ===== LEFT CARD ===== */
+
+.aboutL-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  line-height: 1.9;
+  color: #475569;
+  position: relative;
+  overflow: hidden;
+}
+
+/* keep text above animation */
+.aboutL-card > *:not(.stars-bg) {
+  position: relative;
+  z-index: 2;
+}
+
+/* soft orange corner circle */
+
+.aboutL-card::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: #ff6a00;
+  opacity: 0.12;
+  border-radius: 50%;
+  top: -60px;
+  right: -60px;
+  z-index: 1;
+}
+
+.aboutL-card p {
+  margin-bottom: 22px;
+  font-size: 16px;
+}
+
+.aboutL-brand {
+  color: #ff6a00;
+  font-weight: 700;
+}
+
+/* ===== TAGLINE ===== */
+
+.aboutL-tagline {
+  margin-top: 25px;
+  background: linear-gradient(90deg, #1f1f1f, #2b2b2b);
+  color: #fff;
+  padding: 18px 26px;
+  border-radius: 16px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* ===== COLORED STAR ANIMATION ===== */
+
+.stars-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+/* small colored dots */
+
+.stars {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow:
+    10% 20% 0 #ff6a00,
+    25% 35% 0 #60a5fa,
+    40% 15% 0 #34d399,
+    55% 40% 0 #f59e0b,
+    70% 25% 0 #a78bfa,
+    85% 50% 0 #fb7185;
+  opacity: .35;
+  animation: dotTwinkle 6s infinite ease-in-out;
+}
+
+@keyframes dotTwinkle {
+  0%,100% { opacity: .25; transform: scale(1); }
+  50% { opacity: .7; transform: scale(1.5); }
+}
+
+/* shooting stars */
+
+.shooting-star {
+  position: absolute;
+  width: 110px;
+  height: 3px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: shootColor 5s infinite ease-in;
+}
+
+.shooting-star:nth-child(2) {
+  background: linear-gradient(90deg, #ff6a00, transparent);
+  top: 15%;
+  left: -40%;
+  animation-delay: 0s;
+}
+
+.shooting-star:nth-child(3) {
+  background: linear-gradient(90deg, #60a5fa, transparent);
+  top: 45%;
+  left: -40%;
+  animation-delay: 1.8s;
+}
+
+.shooting-star:nth-child(4) {
+  background: linear-gradient(90deg, #34d399, transparent);
+  top: 70%;
+  left: -40%;
+  animation-delay: 3.2s;
+}
+
+@keyframes shootColor {
+  0% {
+    transform: translateX(0) translateY(0) rotate(25deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(180%) translateY(90%) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* ===== FEATURES ===== */
+
+.aboutL-features {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.aboutL-feature {
+  background: #ffffff;
+  padding: 24px 26px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  display: flex;
+  gap: 16px;
+  transition: .25s;
+}
+
+.aboutL-feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.12);
+}
+
+.arrow {
+  color: #ff6a00;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.aboutL-feature h4 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: #1f2937;
+}
+
+.aboutL-feature p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .aboutL-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.aboutL {
+  position: relative;
+  overflow: hidden;
+}
+
+/* canvas background layer */
+.poly-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* keep content above canvas */
+.aboutL-wrap {
+  position: relative;
+  z-index: 1;
+}

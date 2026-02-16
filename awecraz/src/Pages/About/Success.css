@@ -1,0 +1,57 @@
+.success {
+  background: #f3f4f6;
+  padding: 90px 20px;
+  text-align: center;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.success-wrap {
+  max-width: 900px;
+  margin: auto;
+}
+
+.success-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 18px;
+}
+
+.success-desc {
+  color: #6b7280;
+  line-height: 1.7;
+  font-size: 15px;
+  margin-bottom: 50px;
+}
+
+.success-stats {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.success-number {
+  font-size: 56px;
+  font-weight: 800;
+  color: #ff6a00;
+  line-height: 1;
+}
+
+.success-label {
+  margin-top: 10px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+/* responsive */
+
+@media (max-width: 600px) {
+  .success-stats {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .success-number {
+    font-size: 44px;
+  }
+}
