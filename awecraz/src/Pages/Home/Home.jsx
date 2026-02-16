@@ -8,9 +8,9 @@ import slide3 from "../../assets/images/slide3.png";
 
 const slides = [
   {
-    image: slide1,
+    image: slide3,
     title: "Welcome to AWECRAZ Studioz",
-    subtitle: "Empowering Your Brand with Creativity and Quality.",
+    subtitle: "We Plan. We Develop. We Design. We Deliver.",
     button: "Get Started",
     link:"contact"
   },
@@ -22,7 +22,7 @@ const slides = [
     link:"services"
   },
   {
-    image: slide3,
+    image: slide1,
     title: "Accelerate Your Success",
   subtitle: "We blend creativity and strategy to fuel measurable growth.",
     button: "Contact Us",

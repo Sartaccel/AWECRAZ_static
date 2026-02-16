@@ -6,25 +6,32 @@ const Navbar = () => {
   const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
+useEffect(() => {
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY + 100; // adjust for navbar height
+
     const sections = document.querySelectorAll("section");
 
-    const handleScroll = () => {
-      let current = "home";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
 
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 120;
-        if (window.scrollY >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
+      if (
+        scrollPosition >= sectionTop &&
+        scrollPosition < sectionTop + sectionHeight
+      ) {
+        setActive(section.id);
+      }
+    });
+  };
 
-      setActive(current);
-    };
+  window.addEventListener("scroll", handleScroll);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  handleScroll(); // run once on load
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
   return (
     <nav className="navbar">
@@ -39,33 +46,23 @@ const Navbar = () => {
           {/* Navigation Links */}
           <ul className={`nav-links ${open ? "show" : ""}`}>
 
-            <li className={active === "home" ? "active" : ""}>
-              <a href="#home" className="nav-link" onClick={() => setOpen(false)}>
-                Home
-                <span className="nav-dot"></span>
-              </a>
+            <li>
+              <a href="#home" className={`nav-link ${active === "home" ? "active" : ""}`} onClick={() => setOpen(false)}>Home</a>
             </li>
+             <li>
+              <a href="#about" className={`nav-link ${active === "about" ? "active" : ""}`} onClick={() => setOpen(false)}>About Us</a>
+            </li>
+             <li>
+              <a href="#services" className={`nav-link ${active === "services" ? "active" : ""}`} onClick={() => setOpen(false)}>Our Services</a>
+            </li>
+            <li>
+              <a href="#contact" className={`nav-link ${active === "contact" ? "active" : ""}`} onClick={() => setOpen(false)}>Contact</a>
+            </li>
+            <li>
+              <a href="#branches" className={`nav-link ${active === "branches" ? "active" : ""}`} onClick={() => setOpen(false)}>Our Branch</a>
+            </li>
+             
 
-            <li className={active === "about" ? "active" : ""}>
-              <a href="#about" className="nav-link" onClick={() => setOpen(false)}>
-                About
-                <span className="nav-dot"></span>
-              </a>
-            </li>
-
-            <li className={active === "services" ? "active" : ""}>
-              <a href="#services" className="nav-link" onClick={() => setOpen(false)}>
-                Services
-                <span className="nav-dot"></span>
-              </a>
-            </li>
-
-            <li className={active === "contact" ? "active" : ""}>
-              <a href="#contact" className="nav-link" onClick={() => setOpen(false)}>
-                Contact
-                <span className="nav-dot"></span>
-              </a>
-            </li>
 
           </ul>
 
