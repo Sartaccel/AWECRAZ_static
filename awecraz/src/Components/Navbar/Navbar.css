@@ -108,7 +108,7 @@
   font-size: 14px;
   font-weight: 600;
   color: #ffffff;
-
+  text-decoration: none;
   /* Gradient like the text */
   background: linear-gradient(
     90deg,

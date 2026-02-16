@@ -1,0 +1,129 @@
+/* ===== SECTION ===== */
+
+.branches-section {
+  padding: 80px 20px;
+}
+
+.branches-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.branches-header h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* Rotating Globe */
+.globe-icon {
+  font-size: 40px;
+  color: #ff3c00;
+  display: inline-block;
+  animation: rotateGlobe 6s linear infinite;
+}
+
+@keyframes rotateGlobe {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===== CONTAINER ===== */
+
+.branches-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ===== CARD ===== */
+
+.branch-card {
+  flex: 1 1 500px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.branch-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== MAP ===== */
+
+.map-container {
+  width: 100%;
+  height: 300px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ===== INFO ===== */
+
+.branch-info {
+  padding: 20px;
+}
+
+.branch-info h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.branch-info p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .branches-container {
+    flex-direction: column;
+  }
+
+  .map-container {
+    height: 250px;
+  }
+}
+/* ===== SECTION ===== */
+.branches-section {
+  position: relative;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+/* ===== BACKGROUND VIDEO ===== */
+.branches-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.2; /* 🔥 adjust here (0.05–0.2 ideal range) */
+}
+
+/* Optional white overlay for better readability */
+.branches-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* ===== CONTENT ABOVE VIDEO ===== */
+.branches-content {
+  position: relative;
+  z-index: 2;
+}
