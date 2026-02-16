@@ -1,107 +1,23 @@
-/* ===== SECTION ===== */
-
-.branches-section {
-  padding: 80px 20px;
-}
-
-.branches-header {
-  text-align: center;
-  margin-bottom: 60px;
-  position: relative;
-}
-
-.branches-header h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-/* Rotating Globe */
-.globe-icon {
-  font-size: 40px;
-  color: #ff3c00;
-  display: inline-block;
-  animation: rotateGlobe 6s linear infinite;
-}
-
-@keyframes rotateGlobe {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* ===== CONTAINER ===== */
-
-.branches-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* ===== CARD ===== */
-
-.branch-card {
-  flex: 1 1 500px;
-  background: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  transition: 0.3s ease;
-}
-
-.branch-card:hover {
-  transform: translateY(-5px);
-}
-
-/* ===== MAP ===== */
-
-.map-container {
-  width: 100%;
-  height: 300px;
-}
-
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* ===== INFO ===== */
-
-.branch-info {
-  padding: 20px;
-}
-
-.branch-info h4 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.branch-info p {
-  color: #555;
-  line-height: 1.6;
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 768px) {
-  .branches-container {
-    flex-direction: column;
-  }
-
-  .map-container {
-    height: 250px;
-  }
-}
-/* ===== SECTION ===== */
 .branches-section {
   position: relative;
-  padding: 80px 20px;
+  padding: 100px 20px;
   overflow: hidden;
 }
+.branches-content {
+  position: relative;
+  z-index: 2;   /* higher than overlay */
+}
 
-/* ===== BACKGROUND VIDEO ===== */
+.branches-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.4)
+  );
+  z-index: 1;
+}
 .branches-bg-video {
   position: absolute;
   top: 50%;
@@ -111,19 +27,147 @@
   object-fit: cover;
   transform: translate(-50%, -50%);
   z-index: 0;
-  opacity: 0.2; /* 🔥 adjust here (0.05–0.2 ideal range) */
+  opacity: 0.15;
 }
-
-/* Optional white overlay for better readability */
-.branches-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-/* ===== CONTENT ABOVE VIDEO ===== */
-.branches-content {
+.branches-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
   position: relative;
   z-index: 2;
+}
+.branch-card {
+  flex: 1 1 480px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  overflow: hidden;
+
+  border: 1px solid #F28A18;        /* 🟠 Orange border */
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+
+  transition: all 0.3s ease;
+}
+
+.branch-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 10px rgba(242,138,24,0.35);
+}
+.map-container {
+  width: 100%;
+  height: 300px;
+  border-bottom: 2px solid #F28A18;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.branch-info {
+  padding: 25px;
+}
+
+.branch-info h4 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #fc8201;
+}
+
+.branch-info p {
+  color: #444;
+  line-height: 1.7;
+  font-size: 15px;
+}
+.branches-header h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.branches-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.branches-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  color: #222; /* Dark text like Contact */
+}
+
+/* Orange underline */
+.branches-header h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #F28A18;
+  display: block;
+  margin: 10px auto 0;
+}
+
+
+@media (max-width: 992px) {
+  .branches-container {
+    gap: 30px;
+  }
+
+  .branch-card {
+    flex: 1 1 100%;
+  }
+
+  .map-container {
+    height: 260px;
+  }
+}
+@media (max-width: 768px) {
+  .branches-header h2 {
+    font-size: 28px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .branches-section {
+    padding: 70px 15px;
+  }
+
+  .branches-header h2 {
+    font-size: 28px;
+  }
+
+  .map-container {
+    height: 220px;
+  }
+
+  .branch-info h4 {
+    font-size: 18px;
+  }
+
+  .branch-info p {
+    font-size: 14px;
+  }
+}
+
+.map-link-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+
+  background: #F28A18;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.map-link-btn:hover {
+  background: #EC600E;
+  transform: translateY(-2px);
 }

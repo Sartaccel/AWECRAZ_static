@@ -31,7 +31,7 @@ function Footer() {
 
             <div className="d-flex gap-3 mt-3 social-icons">
               <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaInstagram /></a>
+              <a href="https://www.instagram.com/awecrazbrandsolution/" target="_blank"><FaInstagram /></a>
               <a href="#"><FaYoutube /></a>
             </div>
           </div>
@@ -66,10 +66,7 @@ function Footer() {
               4\4b , Royala Nagar, 3rd main road, Ramapuram , Chennai 600082
             </p>
 
-            <p className="contact-item">
-              <FaEnvelope className="contact-icon" />
-             Abarnasreeram62@gmail.com 
-            </p>
+            
 
             <p className="contact-item">
               <FaEnvelope className="contact-icon" />
@@ -78,7 +75,7 @@ function Footer() {
 
             <p className="contact-item">
               <FaPhoneAlt className="contact-icon" />
-              +91 8925661662
+              +91 892 566 1662
             </p>
 
             <p className="contact-item">

@@ -1,12 +1,6 @@
 import React from "react";
 import "./Contact.css";
 
-import {
-  FaMapMarkerAlt,
-  FaEnvelope,
-  FaPhoneAlt,
-  FaClock
-} from "react-icons/fa";
 
 function Contact() {
   return (
@@ -19,60 +13,7 @@ function Contact() {
         </p>
       </div>
 
-      <div className="contact-container">
-        {/* LEFT SIDE */}
-        <div className="info-container">
-          <div className="info-item">
-            <div className="icon">
-              <FaMapMarkerAlt />
-            </div>
-            <div>
-              <h4>Location</h4>
-              <p>1001 Riverside Avenue, Jacksonville 32207</p>
-            </div>
-          </div>
-          
-
-          <div className="info-item">
-            <div className="icon">
-              <FaEnvelope />
-            </div>
-            <div>
-              <h4>Email</h4>
-              <p>Abarnasreeram62@gmail.com</p>
-            </div>
-          </div>
-          <div className="info-item">
-            <div className="icon">
-              <FaEnvelope />
-            </div>
-            <div>
-              <h4>Email</h4>
-              <p>Awecrazstudios@gmail.com</p>
-
-            </div>
-          </div>
-
-          <div className="info-item">
-            <div className="icon">
-              <FaPhoneAlt />
-            </div>
-            <div>
-              <h4>Call</h4>
-              <p>8925661662</p>
-            </div>
-          </div>
-
-          <div className="info-item">
-            <div className="icon">
-              <FaClock />
-            </div>
-            <div>
-              <h4>Open Hours</h4>
-              <p>Mon - Sat: 11AM - 23PM</p>
-            </div>
-          </div>
-        </div>
+        
 
         {/* RIGHT SIDE */}
         <div className="form-container">
@@ -88,7 +29,6 @@ function Contact() {
             </div>
           </form>
         </div>
-      </div>
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
+import { FaAngleRight } from "react-icons/fa";
 
 import slide1 from "../../assets/images/slide1.png";
 import slide2 from "../../assets/images/slide2.png";
@@ -8,21 +9,24 @@ import slide3 from "../../assets/images/slide3.png";
 const slides = [
   {
     image: slide1,
-    title: "Creative Digital Agency",
-    subtitle: "We build powerful brands with stunning visuals.",
-    button: "Get Started"
+    title: "Welcome to AWECRAZ Studioz",
+    subtitle: "Empowering Your Brand with Creativity and Quality.",
+    button: "Get Started",
+    link:"contact"
   },
   {
     image: slide2,
-    title: "Innovative Solutions",
-    subtitle: "Turning ideas into digital experiences.",
-    button: "Our Services"
+   title: "Creative Innovation Delivered",
+  subtitle: "Strategic design and technology that move your brand forward.",
+    button: "Our Services",
+    link:"services"
   },
   {
     image: slide3,
-    title: "Grow Your Business",
-    subtitle: "We help you scale with smart strategies.",
-    button: "Contact Us"
+    title: "Accelerate Your Success",
+  subtitle: "We blend creativity and strategy to fuel measurable growth.",
+    button: "Contact Us",
+    link:"contact"
   }
 ];
 
@@ -44,11 +48,17 @@ function Home() {
           className={`hero-slide ${index === current ? "active" : ""}`}
           style={{ backgroundImage: `url(${slide.image})` }}
         >
-          <div className="hero-content container">
+          <div className="hero-content">
             <h1>{slide.title}</h1>
             <p>{slide.subtitle}</p>
-            <button className="hero-btn">{slide.button}</button>
-          </div>
+<a href={`#${slide.link}`} className="hero-btn">
+  {slide.button}
+  <span className="arrow-group">
+    <FaAngleRight />
+    <FaAngleRight />
+    <FaAngleRight />
+  </span>
+</a>          </div>
         </div>
       ))}
 
