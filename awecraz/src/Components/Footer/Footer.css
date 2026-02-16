@@ -157,6 +157,9 @@
   .footer .d-flex {
     justify-content: center !important;
   }
+  .contact-item{
+    justify-content: center;
+  }
 
   .footer ul li a:hover {
     padding-left: 0;

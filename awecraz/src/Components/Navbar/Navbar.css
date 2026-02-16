@@ -109,32 +109,36 @@
   font-weight: 600;
   color: #ffffff;
   text-decoration: none;
-  /* Gradient like the text */
+
   background: linear-gradient(
     90deg,
-    #ffc107 0%,     /* yellow */
-    #ff9800 50%,    /* orange */
-    #ff6a00 100%    /* deep orange */
+    #ffc107 0%,
+    #ff9800 50%,
+    #ff6a00 100%
   );
 
-  border: none;
-  border-radius: 28px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  border: 3px solid #000;              /* 🔥 Hand-drawn border */
+  border-radius: 30px;
 
-  box-shadow: 0 4px 14px rgba(255, 136, 25, 0.35);
+  box-shadow: 4px 4px 0px #000;        /* Sketch shadow */
+
+  cursor: pointer;
+  transition: 0.2s ease;
 }
+
 
 /* Hover - Slight Bright Glow */
 .book-btn:hover {
-  filter: brightness(1.1);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 136, 25, 0.45);
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0px #000;
+  filter: brightness(1.05);
 }
+
 
 /* Click */
 .book-btn:active {
   transform: translateY(0);
+  box-shadow: 2px 2px 0px #000;
 }
 
 
