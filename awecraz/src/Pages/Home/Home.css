@@ -40,7 +40,9 @@
   content: "";
   position: absolute;
   inset: 0;
-    background: rgba(126, 124, 124, 0.5);
+    /* background: rgba(126, 124, 124, 0.5); */
+        background: rgba(0, 0, 0, 0.5);
+
 
 }
 
@@ -205,8 +207,16 @@
     height: 60vh;
   }
 
+    .hero-slide::before {
+  
+    background: rgba(0, 0, 0, 0.5);
+
+}
   .hero-content {
     padding: 0 20px;
+  }
+  .hero-slide {
+    background-position: 80% center;  /* try 70% - 85% */
   }
 
   .hero-content h1 {

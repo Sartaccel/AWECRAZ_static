@@ -12,6 +12,7 @@ import Branches from "./Pages/Branches/Branches";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import AdvantagesSketch from "./Pages/Advantages/AdvantagesSketch";
+import ServicePopup from "./Components/ServicePopup/ServicePopup";
 function App() {
   useEffect(() => {
     AOS.init({
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <>
+    <ServicePopup />
       <Navbar />
 
       {/* All sections inside one page */}
@@ -42,7 +44,7 @@ function App() {
       <section id="contact">
         <Contact />
       </section>
-      <section id="Branches">
+      <section id="branches">
         <Branches />
       </section>
 

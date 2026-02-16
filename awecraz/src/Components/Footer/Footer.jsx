@@ -3,9 +3,8 @@ import "./Footer.css";
 import awecrazlogo from "../../assets/images/awecrazlogo.png";
 
 import {
-  FaFacebookF,
+  FaWhatsapp,
   FaInstagram,
-  FaYoutube,
   FaMapMarkerAlt,
   FaEnvelope,
   FaPhoneAlt,
@@ -30,9 +29,8 @@ function Footer() {
             </p>
 
             <div className="d-flex gap-3 mt-3 social-icons">
-              <a href="#"><FaFacebookF /></a>
               <a href="https://www.instagram.com/awecrazbrandsolution/" target="_blank"><FaInstagram /></a>
-              <a href="#"><FaYoutube /></a>
+              <a href="https://wa.me/9384627543"  target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
             </div>
           </div>
 
@@ -63,14 +61,18 @@ function Footer() {
 
             <p className="contact-item">
               <FaMapMarkerAlt className="contact-icon" />
-              4\4b , Royala Nagar, 3rd main road, Ramapuram , Chennai 600082
+              Ramapuram , Chennai 600082
+            </p>
+            <p className="contact-item">
+              <FaMapMarkerAlt className="contact-icon" />
+              Parvathipuram, Nagercoil - 629003
             </p>
 
             
 
             <p className="contact-item">
               <FaEnvelope className="contact-icon" />
-                Awecrazstudios@gmail.com
+                awecrazstudios@gmail.com
            </p>
 
             <p className="contact-item">
@@ -80,7 +82,7 @@ function Footer() {
 
             <p className="contact-item">
               <FaPhoneAlt className="contact-icon" />
-              +91 948 701 6535
+              +91 938 462 7543
             </p>
           </div>
 

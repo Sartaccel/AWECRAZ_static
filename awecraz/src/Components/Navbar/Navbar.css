@@ -100,6 +100,9 @@
   text-shadow: 0 0 10px rgba(255, 106, 0, 0.6);
 }
 
+.nav-link.active {
+  color: #ff6a00;
+}
 
 
 /* Book Button */
@@ -185,3 +188,4 @@
     display: none;
   }
 }
+
