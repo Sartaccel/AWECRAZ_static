@@ -19,7 +19,7 @@ import Testimonial from "./Pages/Testimonial/Testimonial";
 import Brands from "./Pages/Brands/Brands";
 import Video from "./Pages/Work/Video";
 import AllVideo from "./Pages/Work/Allvideo";
-
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 
 
 function App() {
@@ -31,7 +31,13 @@ function App() {
       once: true,
     });
   }, []);
+   useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
 
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Routes>
       <Route
@@ -54,7 +60,7 @@ function App() {
             <section id="testimonial"><Testimonial /></section>
             <section id="contact"><Contact /></section>
             <section id="branches"><Branches /></section>
-
+            <ScrollToTop />
             <Footer />
           </>
         }
