@@ -77,7 +77,12 @@ export default function Success() {
             </div>
             <div className="success-label">Films</div>
           </div>
-
+<div className="success-item">
+    <div className="success-number">
+      <Counter end={30} start={visible} />
+    </div>
+    <div className="success-label">Our Brands</div>
+  </div>
         </div>
 
       </div>

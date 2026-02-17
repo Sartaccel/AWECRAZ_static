@@ -24,7 +24,7 @@ export default function AdvantagesSketch() {
 
       <h4 className="sk-mini">Advantages</h4>
       <h2 className="sk-title">
-        Why should you choose Awecrazstudioz
+        Why should you choose Awecraz  Studioz
       </h2>
 
       <div className="sk-grid">

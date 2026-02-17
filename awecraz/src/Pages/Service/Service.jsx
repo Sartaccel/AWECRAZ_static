@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./Service.css";
+import PolyParticles from "../About/PolyParticles";
 
 const services = [
     {
@@ -60,30 +61,36 @@ export default function Service() {
     cards.forEach(c => obs.observe(c));
   }, []);
 
-  return (
-    <section className="svc-section">
-      <h2 className="svc-title">
-        Our <span>Services</span>
-      </h2>
+ 
+   return (
+  <section className="svc-section">
 
-      <div className="svc-grid">
-        {services.map((s, i) => (
-          <div
-            key={i}
-            className="svc-card"
-            style={{
-              "--accent": s.color,
-              "--delay": `${i * 0.12}s`
-            }}
-          >
-            <div className="svc-card-inner">
-              <div className="svc-head">{s.title}</div>
-              <p>{s.text}</p>
-              <span className="svc-light"></span>
-            </div>
+    {/* ✅ background animation */}
+    <PolyParticles />
+
+    <h2 className="svc-title">
+      Our <span>Services</span>
+    </h2>
+
+    <div className="svc-grid">
+      {services.map((s, i) => (
+        <div
+          key={i}
+          className="svc-card"
+          style={{
+            "--accent": s.color,
+            "--delay": `${i * 0.12}s`
+          }}
+        >
+          <div className="svc-card-inner">
+            <div className="svc-head">{s.title}</div>
+            <p>{s.text}</p>
+            <span className="svc-light"></span>
           </div>
-        ))}
-      </div>
-    </section>
-  );
-}
+        </div>
+      ))}
+    </div>
+
+  </section>
+);
+};
