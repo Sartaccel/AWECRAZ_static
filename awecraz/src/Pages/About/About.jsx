@@ -61,15 +61,3 @@ export default function About() {
   );
 }
 
-function Feature({ title, text }) {
-  return (
-    <div className="aboutL-feature">
-      <div className="arrow">»</div>
-      <div>
-        <h4>{title}</h4>
-        <p>{text}</p>
-      </div>
-    </div>
-  
-  );
-}

@@ -62,7 +62,7 @@ function Testimonial() {
     <section className="testimonial-section">
       <div className="container">
         <h2 className="testimonial-title text-center">
-          What Our Clients Say
+          What Our <span>Clients</span>  Say
         </h2>
 
         <div className="testimonial-grid">

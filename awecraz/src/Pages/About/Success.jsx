@@ -51,7 +51,7 @@ export default function Success() {
       <div className="success-wrap">
 
         <h2 className="success-title">
-          Our Success in Last 3 Years
+          Our Success in <span>Last 7 Years</span> 
         </h2>
 
         <p className="success-desc">
