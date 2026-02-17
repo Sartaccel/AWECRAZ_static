@@ -29,7 +29,13 @@ function Footer() {
             </p>
 
             <div className="d-flex gap-3 mt-3 social-icons">
-              <a href="https://www.instagram.com/awecrazbrandsolution/" target="_blank"><FaInstagram /></a>
+<a
+  href="https://www.instagram.com/awecrazbrandsolution/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <FaInstagram />
+</a>
               <a     href="https://wa.me/919384627543"
  target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
             </div>
