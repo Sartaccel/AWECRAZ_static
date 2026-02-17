@@ -2,6 +2,9 @@ import React from "react";
 import "./About.css";
 import PolyParticles from "./PolyParticles";
 import Success from "./Success";
+import aboutImg from "../../assets/images/sri.jpeg";
+
+
 
 export default function About() {
   return (
@@ -31,7 +34,7 @@ export default function About() {
             <p>
               In 2022, we launched
               <span className="aboutL-brand"> AweCraz Brand Solution</span>,
-              a new venture aimed at helping aspiring business owners grow their brands on social media ,with a focus on stratergy,designand impactful delivery,<span className="aboutL-brand"> AweCraz Brand Solution</span>,empowers business to reach and engage their audience effectively
+              a new venture aimed at helping aspiring business owners grow their brands on social media ,with a focus on stratergy,designand impactful delivery,<span className="aboutL-brand"> AweCraz Brand Solution</span>  ,empowers business to reach and engage their audience effectively
             </p>
 
             <div className="aboutL-tagline">
@@ -40,11 +43,15 @@ export default function About() {
           </div>
 
           {/* RIGHT FEATURES */}
-          <div className="aboutL-features">
-            <Feature title="Comprehensive Solutions" text="End-to-end services tailored to your needs." />
-            <Feature title="Innovative Approach" text="Creative strategies powered by latest technology." />
-            <Feature title="Proven Expertise" text="A strong track record of successful projects." />
-          </div>
+         <div className="aboutL-imageCard">
+  <img src={aboutImg} alt="Managing Director" />
+
+  <div className="aboutL-mdOverlay">
+    <h4>Mr. SreeRam JR</h4>
+    <span>Managing Director</span>
+  </div>
+</div>
+
 
         </div>
       </div>

@@ -1,0 +1,132 @@
+/* ===== SECTION ===== */
+
+.videoSec {
+  padding: 90px 20px;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #f8fafc,
+      #f8fafc 28px,
+      #eef2f7 29px
+    ); /* notebook paper feel */
+}
+
+/* ===== TITLE ===== */
+
+.videoTitle {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 40px;
+  color: #111827;
+}
+
+.videoTitle span {
+  color: #ff6a00;
+}
+
+/* ===== GRID ===== */
+
+.videoGrid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 34px;
+}
+
+/* ===== CARD ===== */
+
+.videoCard {
+  animation: sketchIn .6s ease both;
+}
+
+/* pencil sketch frame */
+
+.sketchFrame {
+  position: relative;
+  background: #fff;
+  padding: 14px;
+  border-radius: 14px;
+
+  box-shadow:
+    0 0 0 2px #1f2937,
+    6px 6px 0 #1f2937; /* pencil outline */
+
+  transform: rotate(-.6deg);
+  transition: .3s ease;
+}
+
+.sketchFrame:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+/* ===== VIDEO ===== */
+
+.sketchFrame video {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  background: #000;
+}
+
+/* ===== ERASER STRIPE EFFECT ===== */
+
+.eraserMark {
+  position: absolute;
+  top: -8px;
+  right: 18px;
+  width: 60px;
+  height: 14px;
+  background: linear-gradient(90deg,#ffb4c2,#ffd6de);
+  border-radius: 4px;
+  box-shadow: 0 2px 0 rgba(0,0,0,.15);
+  opacity: .9;
+}
+
+/* ===== SEE MORE BUTTON ===== */
+.seeMoreBtn {
+  padding: 12px 35px;
+  border: 3px solid #000;
+  background: linear-gradient(
+    90deg,
+    #ffc107 0%,
+    #ff9800 50%,
+    #ff6a00 100%
+  );
+  color: white;
+  font-size: 18px;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #000;
+  transition: 0.2s ease;
+
+  display: block;          /* ✅ important */
+  margin: 30px auto 0;     /* ✅ centers horizontally */
+}
+
+.seeMoreBtn:hover {
+   transform: translateY(-3px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+/* ===== ENTRY ANIMATION ===== */
+
+@keyframes sketchIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) rotate(-2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(-.6deg);
+  }
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 800px) {
+  .videoGrid {
+    grid-template-columns: 1fr;
+  }
+}

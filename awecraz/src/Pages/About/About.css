@@ -1,20 +1,28 @@
 /* ===== SECTION ===== */
 
 .aboutL {
+  position: relative;
+  overflow: hidden;
   background: #f3f4f6;
   padding: 80px 20px;
   font-family: system-ui, -apple-system, sans-serif;
 }
 
+/* ===== POLYGON CANVAS ===== */
+
+.poly-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
 .aboutL-wrap {
   max-width: 1200px;
   margin: auto;
-}
-
-.aboutL-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== TITLE ===== */
@@ -40,6 +48,16 @@
   margin-top: 10px;
 }
 
+/* ===== GRID — EQUAL WIDTH ===== */
+
+.aboutL-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr; /* 65 / 35 ratio */
+  gap: 30px;
+  align-items: start;
+}
+
+
 /* ===== LEFT CARD ===== */
 
 .aboutL-card {
@@ -53,14 +71,6 @@
   overflow: hidden;
 }
 
-/* keep text above animation */
-.aboutL-card > *:not(.stars-bg) {
-  position: relative;
-  z-index: 2;
-}
-
-/* soft orange corner circle */
-
 .aboutL-card::after {
   content: "";
   position: absolute;
@@ -71,7 +81,6 @@
   border-radius: 50%;
   top: -60px;
   right: -60px;
-  z-index: 1;
 }
 
 .aboutL-card p {
@@ -96,146 +105,184 @@
   display: inline-block;
 }
 
-/* ===== COLORED STAR ANIMATION ===== */
+/* ===== RIGHT IMAGE CARD ===== */
 
-.stars-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+.aboutL-imageCard {
+  position: relative;
+  background: #ffffff;
+  padding: 18px;
   border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
   overflow: hidden;
+  align-self: start;
 }
 
-/* small colored dots */
+/* ⭐ FACE-SAFE IMAGE RULE */
 
-.stars {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
+.aboutL-imageCard img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;              /* controls size */
+  object-fit: cover;
+  object-position: top center;    /* keeps face visible */
+  border-radius: 20px;
+  display: block;
+  transition: transform .6s ease;
+}
+
+/* hover zoom */
+
+.aboutL-imageCard:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== MD OVERLAY ===== */
+
+.aboutL-mdOverlay {
   position: absolute;
-  box-shadow:
-    10% 20% 0 #ff6a00,
-    25% 35% 0 #60a5fa,
-    40% 15% 0 #34d399,
-    55% 40% 0 #f59e0b,
-    70% 25% 0 #a78bfa,
-    85% 50% 0 #fb7185;
-  opacity: .35;
-  animation: dotTwinkle 6s infinite ease-in-out;
-}
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.78),
+    rgba(0,0,0,.35),
+    transparent
+  );
+  color: #fff;
 
-@keyframes dotTwinkle {
-  0%,100% { opacity: .25; transform: scale(1); }
-  50% { opacity: .7; transform: scale(1.5); }
-}
-
-/* shooting stars */
-
-.shooting-star {
-  position: absolute;
-  width: 110px;
-  height: 3px;
-  border-radius: 3px;
+  transform: translateY(20px);
   opacity: 0;
-  animation: shootColor 5s infinite ease-in;
+  transition: .35s ease;
 }
 
-.shooting-star:nth-child(2) {
-  background: linear-gradient(90deg, #ff6a00, transparent);
-  top: 15%;
-  left: -40%;
-  animation-delay: 0s;
+.aboutL-imageCard:hover .aboutL-mdOverlay {
+  transform: translateY(0);
+  opacity: 1;
 }
 
-.shooting-star:nth-child(3) {
-  background: linear-gradient(90deg, #60a5fa, transparent);
-  top: 45%;
-  left: -40%;
-  animation-delay: 1.8s;
+.aboutL-mdOverlay h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
 }
 
-.shooting-star:nth-child(4) {
-  background: linear-gradient(90deg, #34d399, transparent);
-  top: 70%;
-  left: -40%;
-  animation-delay: 3.2s;
+.aboutL-mdOverlay span {
+  font-size: 13px;
+  opacity: .95;
+  letter-spacing: .4px;
 }
 
-@keyframes shootColor {
-  0% {
-    transform: translateX(0) translateY(0) rotate(25deg);
+/* ===== MOBILE — SHOW OVERLAY ALWAYS ===== */
+
+@media (hover:none) {
+  .aboutL-mdOverlay {
+    transform: translateY(0);
     opacity: 1;
   }
-  100% {
-    transform: translateX(180%) translateY(90%) rotate(25deg);
-    opacity: 0;
-  }
-}
-
-/* ===== FEATURES ===== */
-
-.aboutL-features {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-.aboutL-feature {
-  background: #ffffff;
-  padding: 24px 26px;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  display: flex;
-  gap: 16px;
-  transition: .25s;
-}
-
-.aboutL-feature:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 30px rgba(0,0,0,0.12);
-}
-
-.arrow {
-  color: #ff6a00;
-  font-size: 22px;
-  font-weight: 900;
-}
-
-.aboutL-feature h4 {
-  margin: 0 0 6px;
-  font-size: 18px;
-  color: #1f2937;
-}
-
-.aboutL-feature p {
-  margin: 0;
-  font-size: 14px;
-  color: #64748b;
 }
 
 /* ===== RESPONSIVE ===== */
 
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+
 @media (max-width: 900px) {
+
+  /* section spacing */
+  .aboutL {
+    padding: 56px 16px;
+  }
+
+  .aboutL-title {
+    font-size: 24px;
+    margin-bottom: 22px;
+  }
+
+  .aboutL-title::after {
+    width: 54px;
+    height: 3px;
+  }
+
+  /* stack grid */
   .aboutL-grid {
     grid-template-columns: 1fr;
+    gap: 22px;
   }
-}
-.aboutL {
-  position: relative;
-  overflow: hidden;
-}
 
-/* canvas background layer */
-.poly-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
+  /* left card tighter */
+  .aboutL-card {
+    padding: 24px 20px;
+    border-radius: 20px;
+    line-height: 1.7;
+  }
 
-/* keep content above canvas */
-.aboutL-wrap {
-  position: relative;
-  z-index: 1;
+  .aboutL-card p {
+    font-size: 14.5px;
+    margin-bottom: 16px;
+  }
+
+  /* orange corner circle smaller */
+  .aboutL-card::after {
+    width: 120px;
+    height: 120px;
+    top: -40px;
+    right: -40px;
+  }
+
+  /* ===== TAGLINE MOBILE FIX ===== */
+
+   .aboutL-tagline {
+    display: block;
+    width: 100%;              /* ✅ never exceed card */
+    max-width: 100%;
+
+    text-align: center;
+    padding: 14px 14px;
+    border-radius: 14px;
+
+    font-size: clamp(12px, 3.2vw, 15px);
+    line-height: 1.35;
+
+    white-space: normal;      /* ✅ allow smart wrap */
+    overflow: hidden;         /* ✅ prevent spill */
+    word-break: keep-all;
+  }
+
+
+  /* ===== IMAGE CARD MOBILE ===== */
+
+  .aboutL-imageCard {
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .aboutL-imageCard img {
+    max-height: 360px;
+    border-radius: 14px;
+  }
+
+  /* overlay always visible already — refine spacing */
+
+  .aboutL-mdOverlay {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+
+  .aboutL-mdOverlay h4 {
+    font-size: 16px;
+  }
+
+  .aboutL-mdOverlay span {
+    font-size: 12px;
+    font-weight: 700;
+    
+  }
+
 }

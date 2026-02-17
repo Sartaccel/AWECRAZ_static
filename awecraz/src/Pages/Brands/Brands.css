@@ -1,0 +1,159 @@
+/* ===== SECTION ===== */
+
+.brands {
+  padding: 80px 20px;
+  background: linear-gradient(180deg,#f8fafc,#eef2f7);
+  overflow: hidden;
+}
+
+.brands-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 44px;
+  color: #0f172a;
+}
+
+/* ===== ROW ===== */
+
+.brand-row {
+  overflow: hidden;
+  margin: 18px 0;
+
+  /* edge fade */
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+/* ===== TRACK ===== */
+
+.brand-track {
+  display: flex;
+  gap: 26px;
+  width: max-content;
+}
+
+/* pause scroll when hovering row */
+
+.brand-row:hover .brand-track {
+  animation-play-state: paused;
+}
+
+/* ===== CARD ===== */
+
+.brand-box {
+  width: 200px;
+  height: 100px;
+  flex-shrink: 0;
+
+  background: #ffffff;
+  border-radius: 18px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 12px 28px rgba(0,0,0,.08);
+
+  overflow: hidden;
+
+  transition: transform .25s ease, box-shadow .25s ease;
+
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* ===== SAFE GLOW BORDER ===== */
+
+.brand-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  box-shadow: inset 0 0 0 1px rgba(99,102,241,.25);
+  opacity: .7;
+  transition: .25s ease;
+}
+
+.brand-box:hover::before {
+  box-shadow:
+    inset 0 0 0 2px rgba(255,106,0,.7),
+    0 0 18px rgba(255,106,0,.35);
+}
+
+/* ===== LIGHT SWEEP ===== */
+
+.brand-box::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(255,255,255,.7),
+    transparent 60%
+  );
+  transform: translateX(-120%);
+  transition: transform .7s ease;
+}
+
+.brand-box:hover::after {
+  transform: translateX(120%);
+}
+
+/* ===== LOGO ===== */
+
+.brand-box img {
+  max-width: 78%;
+  max-height: 75%;
+  object-fit: contain;
+  z-index: 2;
+
+  transition: transform .25s ease;
+}
+
+/* gentle logo zoom only — no container jump */
+
+.brand-box:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== STABLE HOVER (NO UPWARD MOVE) ===== */
+
+.brand-box:hover {
+  transform: scale(1.04);
+  box-shadow: 0 20px 40px rgba(0,0,0,.16);
+}
+
+/* ===== SCROLL ===== */
+
+.scroll-right {
+  animation: scrollRight 34s linear infinite;
+}
+
+.scroll-left {
+  animation: scrollLeft 34s linear infinite;
+}
+
+@keyframes scrollRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:700px) {
+  .brand-box {
+    width: 150px;
+    height: 80px;
+  }
+}
+ span {
+  color: #ff6a00;
+}
