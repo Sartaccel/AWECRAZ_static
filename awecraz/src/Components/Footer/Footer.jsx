@@ -30,7 +30,8 @@ function Footer() {
 
             <div className="d-flex gap-3 mt-3 social-icons">
               <a href="https://www.instagram.com/awecrazbrandsolution/" target="_blank"><FaInstagram /></a>
-              <a href="https://wa.me/9384627543"  target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+              <a     href="https://wa.me/919384627543"
+ target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
             </div>
           </div>
 
@@ -49,9 +50,9 @@ function Footer() {
           <div className="col-lg-3 col-md-6">
             <h5 className="footer-title">Our Clients & Their Stories</h5>
             <ul className="list-unstyled footer-links">
-              <li><a href="#">Our Clients</a></li>
-              <li><a href="#">Our Work</a></li>
-              <li><a href="#">Client Testimonials</a></li>
+              <li><a href="#brands">Our Brands</a></li>
+              <li><a href="#videos">Our Work</a></li>
+              <li><a href="#testimonial">Client Testimonials</a></li>
             </ul>
           </div>
 
@@ -77,7 +78,7 @@ function Footer() {
 
             <p className="contact-item">
               <FaPhoneAlt className="contact-icon" />
-              +91 892 566 1662
+               +91 892 566 1662
             </p>
 
             <p className="contact-item">

@@ -44,6 +44,8 @@
   border-radius: 20px;
   box-shadow: 4px 4px 0px #000;
   transform: rotate(-0.5deg);
+    animation: fadeIn 0.6s ease-in-out;
+
 }
 
 input,
@@ -91,6 +93,41 @@ background: linear-gradient(
 .btn button:hover {
   transform: translateY(-3px);
   box-shadow: 6px 6px 0px #000;
+}
+.form-status {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Success */
+.form-status.success {
+  color: #16a34a;
+}
+
+/* Error */
+.form-status.error {
+  color: #dc2626;
+}
+
+.btn button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 4px 4px 0px #000;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ================= RESPONSIVE ================= */
