@@ -53,14 +53,19 @@ useEffect(() => {
               <a href="#about" className={`nav-link ${active === "about" ? "active" : ""}`} onClick={() => setOpen(false)}>About Us</a>
             </li>
              <li>
-              <a href="#services" className={`nav-link ${active === "services" ? "active" : ""}`} onClick={() => setOpen(false)}>Our Services</a>
+              <a href="#brands" className={`nav-link ${active === "brands" ? "active" : ""}`} onClick={() => setOpen(false)}>Brands</a>
+            </li>
+             <li>
+              <a href="#services" className={`nav-link ${active === "services" ? "active" : ""}`} onClick={() => setOpen(false)}>Services</a>
             </li>
             <li>
-              <a href="#contact" className={`nav-link ${active === "contact" ? "active" : ""}`} onClick={() => setOpen(false)}>Contact</a>
+              <a href="#videos" className={`nav-link ${active === "videos" ? "active" : ""}`} onClick={() => setOpen(false)}>Works</a>
             </li>
             <li>
-              <a href="#branches" className={`nav-link ${active === "branches" ? "active" : ""}`} onClick={() => setOpen(false)}>Our Branch</a>
+              <a href="#testimonial" className={`nav-link ${active === "testimonial" ? "active" : ""}`} onClick={() => setOpen(false)}>Clients</a>
             </li>
+            
+           
              
 
 
